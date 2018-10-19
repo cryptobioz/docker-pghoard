@@ -86,6 +86,11 @@
      "format": "{{getenv "PGHOARD_STATSD_FORMAT"}}"
    },
    {{end}}
+   {{if getenv "PGHOARD_PUSHGATEWAY_ENDPOINT"}}
+   "pushgateway": {
+     "endpoint": "{{getenv "PGHOARD_PUSHGATEWAY_ENDPOINT"}}"
+   },
+   {{end}}
    "syslog": false,
    "syslog_address": "/dev/log",
    "syslog_facility": "local2"
